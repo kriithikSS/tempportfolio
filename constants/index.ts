@@ -10,7 +10,7 @@ import { IconType } from "react-icons";
 
 // ---------------- TYPES ----------------
 
-type FooterLink = {
+export type FooterLink = {
   icon?: IconType;
   name: string;
   link: string;
@@ -145,9 +145,9 @@ export const OTHER_SKILL = [] as const;
 
 export const PROJECTS = [] as const;
 
-// ---------------- FOOTER DATA (FIXED) ----------------
+// ---------------- FOOTER DATA ----------------
 
-export const FOOTER_DATA = [
+export const FOOTER_DATA: FooterColumn[] = [
   {
     title: "Socials",
     data: [
@@ -178,8 +178,7 @@ export const FOOTER_DATA = [
       },
     ],
   },
-] satisfies FooterColumn[];
-
+];
 
 // ---------------- NAV LINKS ----------------
 

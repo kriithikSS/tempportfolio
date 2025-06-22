@@ -40,9 +40,9 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Footer Links */}
+      {/* Footer Links - Solution 1: Type assertion */}
       <div className="w-full flex flex-wrap justify-center gap-10 mt-10">
-        {FOOTER_DATA.map((column) => (
+        {(FOOTER_DATA as FooterColumn[]).map((column) => (
           <div
             key={column.title}
             className="min-w-[200px] h-auto flex flex-col items-center"
