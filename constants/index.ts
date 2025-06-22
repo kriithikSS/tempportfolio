@@ -147,7 +147,7 @@ export const PROJECTS = [] as const;
 
 // ---------------- FOOTER DATA (FIXED) ----------------
 
-export const FOOTER_DATA: FooterColumn[] = [
+export const FOOTER_DATA = [
   {
     title: "Socials",
     data: [
@@ -178,7 +178,7 @@ export const FOOTER_DATA: FooterColumn[] = [
       },
     ],
   },
-];
+] satisfies FooterColumn[];
 
 
 // ---------------- NAV LINKS ----------------
@@ -205,4 +205,3 @@ export const NAV_LINKS = [
 // ---------------- LINKS ----------------
 
 export const LINKS = {};
-export type { FooterColumn };
