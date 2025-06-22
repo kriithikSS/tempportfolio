@@ -3,6 +3,7 @@
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Typewriter } from 'react-simple-typewriter';
 
 import {
   slideInFromLeft,
@@ -30,14 +31,25 @@ export const HeroContent = () => {
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-6xl text-bold text-white max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-6 mt-6 text-6xl font-extrabold text-white max-w-[800px] w-auto h-auto leading-tight tracking-tight"
         >
-          <span>
-            Today, you scroll.{" "}
-            Tomorrow, you grow
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              — I'm building that bridge.
-            </span>{" "}
+          <span className="flex flex-wrap items-center">
+            Today, you scroll. Tomorrow, you grow —
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 inline-block min-w-[420px] ml-2">
+              <Typewriter
+                words={[
+                  "I'm Kriithik SS.",
+                  "I'm building that bridge."
+                ]}
+                loop={true}
+                cursor={true}
+                cursorStyle="|"
+                typeSpeed={90}
+                deleteSpeed={60}
+                delaySpeed={1200}
+                cursorColor="#ffffff"
+              />
+            </span>
           </span>
         </motion.div>
 
@@ -46,10 +58,8 @@ export const HeroContent = () => {
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
           I&apos;m a Full Stack Product Engineer focused on building lean, scalable solutions with business impact.
-I specialize in rapidly prototyping MVPs, validating ideas with real users, and scaling products with both performance and design in mind. I understand the urgency of startup timelines and the importance of delivering measurable value early.
+          I specialize in rapidly prototyping MVPs, validating ideas with real users, and scaling products with both performance and design in mind. I understand the urgency of startup timelines and the importance of delivering measurable value early.
         </motion.p>
-
-        
       </div>
 
       <motion.div

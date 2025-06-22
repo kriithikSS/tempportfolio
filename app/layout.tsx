@@ -31,6 +31,17 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <Navbar />
         {children}
         <Footer />
+
+        {/* Global Audio Element */}
+       <audio
+  id="global-audio"
+  src="/Starboy.mp3"
+  preload="auto"
+  loop
+  muted
+  autoPlay
+/>
+
       </body>
     </html>
   );

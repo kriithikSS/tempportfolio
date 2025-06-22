@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +9,19 @@ import { LINKS, NAV_LINKS, SOCIALS } from "@/constants";
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Function to play music when "Kriithik SS" is clicked
+  const playMusic = () => {
+  const audio = document.getElementById("global-audio") as HTMLAudioElement | null;
+  if (audio) {
+    if (audio.paused) {
+      audio.muted = false; // ensure unmuted
+      audio.volume = 0.3;
+      audio.play().catch((e) => console.log("Playback failed:", e));
+    } else {
+      audio.pause();
+    }
+  }
+};
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
       {/* Navbar Container */}
@@ -16,6 +30,7 @@ export const Navbar = () => {
         <Link
           href="#about-me"
           className="flex items-center"
+          onClick={playMusic}
         >
           <Image
             src="/logo.png"
@@ -25,7 +40,7 @@ export const Navbar = () => {
             draggable={false}
             className="cursor-pointer"
           />
-          <div className="hidden md:flex md:selffont-bold ml-[10px] text-gray-300">Kriithik SS</div>
+          <div className="hidden md:flex font-bold ml-[10px] text-gray-300">Kriithik SS</div>
         </Link>
 
         {/* Web Navbar */}
@@ -40,16 +55,6 @@ export const Navbar = () => {
                 {link.title}
               </Link>
             ))}
-
-            {/* Source Code */}
-            <Link
-              href={LINKS.sourceCode}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
-            >
-              Source Code
-            </Link>
           </div>
         </div>
 
@@ -91,15 +96,6 @@ export const Navbar = () => {
                 {link.title}
               </Link>
             ))}
-            <Link
-              href={LINKS.sourceCode}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Source Code
-            </Link>
           </div>
 
           {/* Social Icons */}
