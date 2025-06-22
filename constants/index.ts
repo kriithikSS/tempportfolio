@@ -16,10 +16,11 @@ type FooterLink = {
   link: string;
 };
 
-type FooterColumn = {
+export type FooterColumn = {
   title: string;
   data: FooterLink[];
 };
+
 
 // ---------------- SKILL DATA ----------------
 

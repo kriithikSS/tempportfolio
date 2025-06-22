@@ -3,6 +3,7 @@
 import Link from "next/link";
 import PlanetModel from "@/components/sub/planet-model";
 import { FOOTER_DATA, type FooterColumn } from "@/constants";
+
 import { MdEmail } from "react-icons/md";
 
 export const Footer = () => {
