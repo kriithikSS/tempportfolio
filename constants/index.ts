@@ -1,4 +1,4 @@
-import { FaYoutube, FaFacebook,FaGooglePlay, } from "react-icons/fa";
+import { FaYoutube, FaFacebook, FaGooglePlay } from "react-icons/fa";
 import {
   RxDiscordLogo,
   RxGithubLogo,
@@ -6,6 +6,22 @@ import {
   RxTwitterLogo,
   RxLinkedinLogo,
 } from "react-icons/rx";
+import { IconType } from "react-icons";
+
+// ---------------- TYPES ----------------
+
+type FooterLink = {
+  icon?: IconType;
+  name: string;
+  link: string;
+};
+
+type FooterColumn = {
+  title: string;
+  data: FooterLink[];
+};
+
+// ---------------- SKILL DATA ----------------
 
 export const SKILL_DATA = [
   {
@@ -50,8 +66,9 @@ export const SKILL_DATA = [
     width: 80,
     height: 80,
   },
-  
 ] as const;
+
+// ---------------- SOCIALS ----------------
 
 export const SOCIALS = [
   {
@@ -76,10 +93,11 @@ export const SOCIALS = [
   },
 ] as const;
 
+// ---------------- SKILLS ----------------
+
 export const FRONTEND_SKILL = [] as const;
 
 export const BACKEND_SKILL = [
-  
   {
     skill_name: "Node.js",
     image: "node.png",
@@ -115,17 +133,53 @@ export const BACKEND_SKILL = [
     image: "figma.png",
     width: 50,
     height: 50,
-  }
+  },
 ] as const;
 
 export const FULLSTACK_SKILL = [] as const;
 
 export const OTHER_SKILL = [] as const;
 
+// ---------------- PROJECTS ----------------
+
 export const PROJECTS = [] as const;
 
-export const FOOTER_DATA = [
-] as const;
+// ---------------- FOOTER DATA (FIXED) ----------------
+
+export const FOOTER_DATA: FooterColumn[] = [
+  {
+    title: "Socials",
+    data: [
+      {
+        icon: RxInstagramLogo,
+        name: "Instagram",
+        link: "https://www.instagram.com/_kriithik_/",
+      },
+      {
+        icon: RxGithubLogo,
+        name: "GitHub",
+        link: "https://github.com/kriithikSS",
+      },
+      {
+        icon: RxLinkedinLogo,
+        name: "LinkedIn",
+        link: "https://www.linkedin.com/in/kriithikss/",
+      },
+    ],
+  },
+  {
+    title: "Apps",
+    data: [
+      {
+        icon: FaGooglePlay,
+        name: "Play Store",
+        link: "https://play.google.com/store/apps/dev?id=8141597240886587947&hl=en",
+      },
+    ],
+  },
+];
+
+// ---------------- NAV LINKS ----------------
 
 export const NAV_LINKS = [
   {
@@ -136,12 +190,16 @@ export const NAV_LINKS = [
     title: "Skills",
     link: "#skills",
   },
-  { title: "Work Experience", link: "#experience" },
+  {
+    title: "Work Experience",
+    link: "#experience",
+  },
   {
     title: "Projects",
     link: "#projects",
   },
 ] as const;
 
-export const LINKS = {
-};
+// ---------------- LINKS ----------------
+
+export const LINKS = {};
