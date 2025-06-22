@@ -3,11 +3,12 @@
 import Link from "next/link";
 import PlanetModel from "@/components/sub/planet-model";
 import { FOOTER_DATA } from "@/constants";
-import type { FooterColumn } from "@/constants";
-
 import { MdEmail } from "react-icons/md";
 
 export const Footer = () => {
+  // Create a local reference with proper typing
+  const footerData = FOOTER_DATA;
+
   return (
     <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] flex flex-col items-center justify-center">
       {/* Top Row: Contact Left, Earth Right */}
@@ -40,17 +41,17 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Footer Links - Solution 1: Type assertion */}
+      {/* Footer Links */}
       <div className="w-full flex flex-wrap justify-center gap-10 mt-10">
-        {(FOOTER_DATA as FooterColumn[]).map((column) => (
+        {footerData.map((column, index) => (
           <div
-            key={column.title}
+            key={column.title || `footer-column-${index}`}
             className="min-w-[200px] h-auto flex flex-col items-center"
           >
             <h3 className="font-bold text-[16px]">{column.title}</h3>
-            {column.data.map(({ icon: Icon, name, link }) => (
+            {column.data.map(({ icon: Icon, name, link }, itemIndex) => (
               <Link
-                key={`${column.title}-${name}`}
+                key={`${column.title}-${name}-${itemIndex}`}
                 href={link}
                 target="_blank"
                 rel="noreferrer noopener"
