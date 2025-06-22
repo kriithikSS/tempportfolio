@@ -205,3 +205,4 @@ export const NAV_LINKS = [
 // ---------------- LINKS ----------------
 
 export const LINKS = {};
+export type { FooterColumn };

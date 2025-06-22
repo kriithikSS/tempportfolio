@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import PlanetModel from "@/components/sub/planet-model";
-import { FOOTER_DATA, type FooterColumn } from "@/constants";
+import { FOOTER_DATA } from "@/constants";
+import type { FooterColumn } from "@/constants";
+
 
 import { MdEmail } from "react-icons/md";
 
