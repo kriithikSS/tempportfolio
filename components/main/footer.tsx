@@ -2,26 +2,22 @@
 
 import Link from "next/link";
 import PlanetModel from "@/components/sub/planet-model";
-import { FOOTER_DATA } from "@/constants";
+import { FOOTER_DATA, type FooterColumn } from "@/constants";
 import { MdEmail } from "react-icons/md";
 
 export const Footer = () => {
   return (
     <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] flex flex-col items-center justify-center">
-
       {/* Top Row: Contact Left, Earth Right */}
       <div className="w-full max-w-6xl flex flex-col lg:flex-row items-start justify-between gap-10 px-6 py-10">
-
         {/* Contact Section on Left */}
         <div className="flex flex-col items-start w-full lg:w-1/2 max-w-md">
           <div className="mb-6">
             <p className="text-sm text-gray-400 uppercase tracking-wider mb-2">GET IN TOUCH</p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Contact.</h2>
           </div>
-
           {/* Contact Options */}
           <div className="space-y-6">
-            {/* Email Contact Link */}
             <div className="flex items-center gap-2">
               <MdEmail className="text-gray-400" />
               <Link
@@ -44,7 +40,7 @@ export const Footer = () => {
 
       {/* Footer Links */}
       <div className="w-full flex flex-wrap justify-center gap-10 mt-10">
-        {FOOTER_DATA.map((column) => (
+        {FOOTER_DATA.map((column: FooterColumn) => (
           <div
             key={column.title}
             className="min-w-[200px] h-auto flex flex-col items-center"
@@ -71,5 +67,5 @@ export const Footer = () => {
         &copy; Kriithik SS {new Date().getFullYear()} Inc. All rights reserved.
       </div>
     </div>
-  )
-}
+  );
+};
