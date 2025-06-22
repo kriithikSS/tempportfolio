@@ -5,7 +5,6 @@ import PlanetModel from "@/components/sub/planet-model";
 import { FOOTER_DATA } from "@/constants";
 import type { FooterColumn } from "@/constants";
 
-
 import { MdEmail } from "react-icons/md";
 
 export const Footer = () => {
@@ -43,7 +42,7 @@ export const Footer = () => {
 
       {/* Footer Links */}
       <div className="w-full flex flex-wrap justify-center gap-10 mt-10">
-        {FOOTER_DATA.map((column: FooterColumn) => (
+        {FOOTER_DATA.map((column) => (
           <div
             key={column.title}
             className="min-w-[200px] h-auto flex flex-col items-center"
