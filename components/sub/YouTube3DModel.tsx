@@ -43,6 +43,7 @@ const YouTube3DModel: React.FC<YouTube3DModelProps> = ({
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    // debug: checking if push reflects
     renderer.toneMappingExposure = 2.2;
     rendererRef.current = renderer;
     mountRef.current.appendChild(renderer.domElement);
