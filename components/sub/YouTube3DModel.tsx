@@ -44,7 +44,7 @@ const YouTube3DModel: React.FC<YouTube3DModelProps> = ({
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 2.2;
-    renderer.physicallyCorrectLights = true;
+   
     rendererRef.current = renderer;
     mountRef.current.appendChild(renderer.domElement);
 
