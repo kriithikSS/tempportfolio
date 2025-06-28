@@ -21,10 +21,16 @@ export type FooterColumn = {
   data: FooterLink[];
 };
 
+export type SkillType = {
+  skill_name: string;
+  image: string;
+  width: number;
+  height: number;
+};
 
 // ---------------- SKILL DATA ----------------
 
-export const SKILL_DATA = [
+export const SKILL_DATA: SkillType[] = [
   {
     skill_name: "HTML",
     image: "html.png",
@@ -67,7 +73,7 @@ export const SKILL_DATA = [
     width: 80,
     height: 80,
   },
-] as const;
+];
 
 // ---------------- SOCIALS ----------------
 
@@ -92,13 +98,13 @@ export const SOCIALS = [
     icon: RxLinkedinLogo,
     link: "https://www.linkedin.com/in/kriithikss/",
   },
-] as const;
+];
 
 // ---------------- SKILLS ----------------
 
-export const FRONTEND_SKILL = [] as const;
+export const FRONTEND_SKILL: SkillType[] = [];
 
-export const BACKEND_SKILL = [
+export const BACKEND_SKILL: SkillType[] = [
   {
     skill_name: "Node.js",
     image: "node.png",
@@ -135,15 +141,15 @@ export const BACKEND_SKILL = [
     width: 50,
     height: 50,
   },
-] as const;
+];
 
-export const FULLSTACK_SKILL = [] as const;
+export const FULLSTACK_SKILL: SkillType[] = [];
 
-export const OTHER_SKILL = [] as const;
+export const OTHER_SKILL: SkillType[] = [];
 
 // ---------------- PROJECTS ----------------
 
-export const PROJECTS = [] as const;
+export const PROJECTS: readonly any[] = [];
 
 // ---------------- FOOTER DATA ----------------
 
